@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.container__lbl{
+    font-size: 14px;
+}
+
+.container__lbl_strong{
+    font-weight: 600;
+}
+
+.container__input{
+
+}
+
+.container__info{
+    font-size: 8px;
+}
+
+.container__info_error{
+    color: red;
+}
+
+.container__info_succes{
+    color: lightgreen;
+}
+
+.container__info_ingo{
+    color: lightblue;
+}
