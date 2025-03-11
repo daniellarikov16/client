@@ -3,37 +3,36 @@
     box-sizing: border-box;
     flex-direction: column;
     gap: 4px;
-}
-
-&__lbl{
-    font-size: 14px;
-    color: #8f8f8f;
-}
-
-&__lbl_strong{
-    font-weight: 600;
-}
-
-&__input{
-    font-size: 14px;
-    padding: 0;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid blue;
-}
-
-&__info{
-    font-size: 8px;
-}
-
-&__info_error{
-    color: red;
-}
-
-&__info_succes{
-    color: lightgreen;
-}
-
-&__info_ingo{
-    color: lightblue;
+    &__lbl{
+        font-size: 14px;
+        color: #8f8f8f;
+    }
+    
+    &__lbl_strong{
+        font-weight: 600;
+    }
+    
+    &__input{
+        font-size: 14px;
+        padding: 0;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid blue;
+    }
+    
+    &__info{
+        font-size: 8px;
+    }
+    
+    &__info_error{
+        color: red;
+    }
+    
+    &__info_succes{
+        color: lightgreen;
+    }
+    
+    &__info_ingo{
+        color: lightblue;
+    }
 }
