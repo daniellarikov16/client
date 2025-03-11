@@ -5,16 +5,16 @@
     gap: 4px;
 }
 
-.container__lbl{
+&__lbl{
     font-size: 14px;
     color: #8f8f8f;
 }
 
-.container__lbl_strong{
+&__lbl_strong{
     font-weight: 600;
 }
 
-.container__input{
+&__input{
     font-size: 14px;
     padding: 0;
     outline: none;
@@ -22,18 +22,18 @@
     border-bottom: 1px solid blue;
 }
 
-.container__info{
+&__info{
     font-size: 8px;
 }
 
-.container__info_error{
+&__info_error{
     color: red;
 }
 
-.container__info_succes{
+&__info_succes{
     color: lightgreen;
 }
 
-.container__info_ingo{
+&__info_ingo{
     color: lightblue;
 }

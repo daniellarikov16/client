@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { ButtonProps } from './ButtonProps';
+import './buttonStyle.scss';
 
 export const Button: FC<ButtonProps> = props => {
     const {
@@ -7,7 +8,7 @@ export const Button: FC<ButtonProps> = props => {
         text
     } = props;
     return(
-        <div onClick = {onClick}>
+        <div onClick = {onClick} className='button'>
             {text}
         </div>
     )
