@@ -7,6 +7,7 @@
 
 .container__lbl{
     font-size: 14px;
+    color: #8f8f8f;
 }
 
 .container__lbl_strong{
@@ -14,7 +15,11 @@
 }
 
 .container__input{
-
+    font-size: 14px;
+    padding: 0;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid blue;
 }
 
 .container__info{

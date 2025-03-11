@@ -1,9 +1,10 @@
 import { ChangeEvent, FC } from 'react';
 import { TextFieldProps } from './TextFieldProps';
 import './textFieldStyles.css';
+import clsx from 'classnames';
 
 export const TextField: FC<TextFieldProps> = (props) => {
-  const { info = "errror", infoType = 'error', lableText, onChange, type = 'text', value } = props;
+  const { info, infoType = 'succes', lableText, lblWeight, onChange, type = 'text', value } = props;
 
   const changeValueHandler = (event: ChangeEvent<HTMLInputElement>) => {
     onChange && onChange(event.target.value);
@@ -11,9 +12,15 @@ export const TextField: FC<TextFieldProps> = (props) => {
 
   return (
     <div className='container'>
-      <label className='container__lbl'>{lableText}</label>
+      <label className={clsx('container__lbl',{
+        'container__lbl_strong': lblWeight === 'strong'
+      })}>{lableText}</label>
       <input className = "container__input" type={type} value={value} onChange={changeValueHandler} />
-      <span className={`container__info ${infoType === 'error' ? 'container__info_error': 'container_info_success'}`}>{info}</span>
+      <span className={clsx('container__info', {
+        'container__info_info': infoType === 'info',
+        'container__info_error': infoType === 'error',
+        'container__info_succes': infoType === 'success',
+      })}>{info}</span>
     </div>
   );
 };
