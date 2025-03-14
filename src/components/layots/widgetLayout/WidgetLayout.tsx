@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { WidgetLayoutProps } from "./WidgetLayoutProps";
+import './widgetLayoutStyles.scss';
 
 export const WidgetLayout: FC<WidgetLayoutProps> = props => {
     const {
@@ -7,16 +8,8 @@ export const WidgetLayout: FC<WidgetLayoutProps> = props => {
     } = props;
 
     return(
-        <div>
-            <div>
-                Header
-            </div>
-            <div>
-                {children}
-            </div>
-            <div>
-                Footer
-            </div>
+        <div className="widget-layout">
+            {children}
         </div>
     )
 }

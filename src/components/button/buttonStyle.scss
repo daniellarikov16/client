@@ -9,12 +9,24 @@
     border: none;
     border-radius: 3px;
     display: flex;
-    color: #FFFFFF;
+    color: #333333;
     justify-content: center;
     align-items: center;
     min-width: 180px;
+    border-color: 1px solid lightgray;
 
     &:hover {
         opacity: 0.8;
+    }
+
+    &_primary{
+        background: #3369f3;
+        color: #ffffff;
+        border: none;
+    }
+    &_secondary{
+        background: #ffffff;
+        color: #3369f3;
+        border: none;
     }
 }

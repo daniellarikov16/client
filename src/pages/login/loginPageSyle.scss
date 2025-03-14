@@ -1,0 +1,29 @@
+.login-page{
+    &__form{
+        display: flex;
+        flex-direction: column;
+        min-width: 450px;
+        min-height: 250px;
+        border-radius: 4px;
+        box-shadow: 0 0 6px 0px #00000024;
+        padding: 32px;
+        gap: 20px;
+    }
+    &__title{
+        font-size: 24px;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    &__fields{
+        margin-bottom: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    &__actions{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
