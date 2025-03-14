@@ -2,7 +2,7 @@ import {FC, use, useState} from 'react';
 import { TextField } from '../../components';
 import { Button } from '../../components';
 import { WidgetLayout } from '../../components/layots';
-import './registrationPageSyle.scss';
+import './registrationPageStyle.scss';
 
 type FormFieldsNames = 'login' | 'password' | 'repeatePassword' | 'lastName' | 'firstName' | 'midName';
 
