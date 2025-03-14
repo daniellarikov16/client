@@ -1,6 +1,7 @@
 import {FC, useState} from 'react';
 import { TextField } from '../../components';
 import { Button } from '../../components';
+import { WidgetLayout } from '../../components/layots';
 
 
 export const LoginPage: FC = () => {
@@ -20,10 +21,10 @@ export const LoginPage: FC = () => {
         });
     }
     return (
-        <>
+        <WidgetLayout>
             <TextField lableText = "Логин" value = {login} onChange={LoginChangedHandler}/>
             <TextField lableText ="Пароль" value = {password} type = "password" onChange={PasswordChangedHandler}/>
             <Button text = 'Войти' onClick={loginHandler}/>
-        </>
+        </WidgetLayout>
     );
 };
