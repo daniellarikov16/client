@@ -3,11 +3,14 @@ import { TextField } from '../../components';
 import { Button } from '../../components';
 import { WidgetLayout } from '../../components/layots';
 import './loginPageSyle.scss';
+import { Route, useNavigate } from 'react-router-dom';
+import { RoutesPaths } from '../../constants/commonConstants';
 
 
 export const LoginPage: FC = () => {
     const [login, setLogin] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const navigate = useNavigate();
 
     const LoginChangedHandler = (value:string)=>{
             setLogin(value);
@@ -22,7 +25,7 @@ export const LoginPage: FC = () => {
         });
     }
     const toRegistrationHandler = ()=>{
-
+        navigate(RoutesPaths.Registration);
     }
     return (
         <WidgetLayout>

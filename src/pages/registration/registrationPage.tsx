@@ -3,7 +3,7 @@ import { TextField } from '../../components';
 import { Button } from '../../components';
 import { WidgetLayout } from '../../components/layots';
 import './registrationPageStyles.scss';
-import { useNavigate } from 'react-router-dom';
+import { Route, useNavigate } from 'react-router-dom';
 import { RoutesPaths } from '../../constants/commonConstants';
 
 
