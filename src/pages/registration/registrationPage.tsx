@@ -2,7 +2,10 @@ import {FC, use, useState} from 'react';
 import { TextField } from '../../components';
 import { Button } from '../../components';
 import { WidgetLayout } from '../../components/layots';
-import './registrationPageStyle.scss';
+import './registrationPageStyles.scss';
+import { useNavigate } from 'react-router-dom';
+import { RoutesPaths } from '../../constants/commonConstants';
+
 
 type FormFieldsNames = 'login' | 'password' | 'repeatePassword' | 'lastName' | 'firstName' | 'midName';
 
@@ -18,6 +21,7 @@ interface RegistrationPage{
 
 export const RegistrationPage : FC = () => {
     const[formFields, setFormFields] = useState<RegistrationPage>();
+    const navigate = useNavigate();
 
     const changeFieldValue = (value: string | undefined, fieldName: FormFieldsNames) => {
         setFormFields(prev => {
@@ -27,6 +31,10 @@ export const RegistrationPage : FC = () => {
             } as RegistrationPage;
         })
     };
+    const toLoginHandler = ()=>{
+            navigate(RoutesPaths.Login);
+        }
+
 
     return (
         <WidgetLayout>
@@ -41,8 +49,9 @@ export const RegistrationPage : FC = () => {
                     <TextField lableText ="Отчество" value = {formFields?.midName} type = "text" onChange={(value) => changeFieldValue(value, 'midName')}/>
                 </div>
                 <div className='reg-page__actions'>
-                    <Button text = 'Войти' onClick={()=>{}} type='primary' />
-                    <Button text = 'Зарегистрироваться' onClick={()=>{}} type='secondary' />
+                    <Button text = 'Зарегистрироваться' onClick={()=>{}} type='primary' />
+                        <Button text = 'Войти' onClick={toLoginHandler} type='secondary' />
+                    
                 </div>
                 
             </div>
