@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { ButtonProps } from './ButtonProps';
-import './buttonStyle.scss';
+import './buttonStyle.scss'
 import clsx from 'classnames';
 
 export const Button: FC<ButtonProps> = props => {
@@ -11,7 +11,7 @@ export const Button: FC<ButtonProps> = props => {
 
     } = props;
     return(
-        <div onClick = {onClick} className={clsx('container__info', {
+        <div onClick = {onClick} className={clsx('button', {
             'button_primary': type === 'primary',
             'button_secondary': type === 'secondary'
         })}>

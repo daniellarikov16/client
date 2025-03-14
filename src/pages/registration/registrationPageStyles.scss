@@ -1,0 +1,12 @@
+.reg-page{
+    &__form{
+        min-width: 450px;
+        min-height: 300px;
+        border-radius: 4px;
+        box-shadow: 0 0 6px 0px #00000024;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+    }
+}
