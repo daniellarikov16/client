@@ -1,4 +1,5 @@
 export enum RoutesPaths{
     Login = '/',
-    Registration = 'registretion'
+    Registration = 'registretion',
+    Departments = 'departments'
 }

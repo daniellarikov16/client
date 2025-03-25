@@ -1,1 +1,1 @@
-export {WidgetLayout} from './WidgetLayout';
+export { WidgetLayout } from './WidgetLayout';

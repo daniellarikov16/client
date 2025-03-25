@@ -34,6 +34,9 @@ export const RegistrationPage : FC = () => {
     const toLoginHandler = ()=>{
             navigate(RoutesPaths.Login);
         }
+    const registrationHandler = () => {
+        navigate (RoutesPaths.Departments);
+    }
 
 
     return (
@@ -49,8 +52,8 @@ export const RegistrationPage : FC = () => {
                     <TextField lableText ="Отчество" value = {formFields?.midName} type = "text" onChange={(value) => changeFieldValue(value, 'midName')}/>
                 </div>
                 <div className='reg-page__actions'>
-                    <Button text = 'Зарегистрироваться' onClick={()=>{}} type='primary' />
-                        <Button text = 'Войти' onClick={toLoginHandler} type='secondary' />
+                    <Button text = 'Зарегистрироваться' onClick={registrationHandler} type='primary' />
+                    <Button text = 'Войти' onClick={toLoginHandler} type='secondary' />
                     
                 </div>
                 
