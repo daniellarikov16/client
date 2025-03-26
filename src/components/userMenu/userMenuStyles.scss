@@ -1,0 +1,32 @@
+@import '../../styles/varibles.scss';
+
+.user-menu {
+    width: 32px;
+    height: 32px;
+    border: 1px solid $color-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover{
+        opacity: 0.9;
+    }
+
+    &__menu{
+        position: absolute;
+        margin-top: 94px;
+        margin-right: 20px;
+        border: 1px solid;
+        background-color: #ffff;
+        color: #000;
+        padding: 8px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        gap: 4px;
+    }
+}

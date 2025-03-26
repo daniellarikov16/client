@@ -1,0 +1,32 @@
+@import './varibles.scss';
+
+@font-face {
+    font-family: Tektur, Condernsed-Black;
+    src: url('../assets/fonts/Tektur_Condensed-Black.ttf') format('truetype');
+}
+
+* {
+    font-family: Tektur, Condernsed-Black;
+
+    &::-webkit-scrollbar-track{
+        -webkit-box-shadow: inset 0 0 6px $color-scrollshadow;
+        background-color: $color-dirtywhite;
+    }
+
+    &::-webkit-scrollbar{
+        width: 4px;
+        background-color: $color-dirtywhite;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background-color: $color-baseblack;
+        border: 1px solid $color-darkgrey;
+        border-radius: 4px;
+    } 
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
