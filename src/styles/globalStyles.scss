@@ -7,6 +7,7 @@
 
 * {
     font-family: Tektur, Condernsed-Black;
+    box-sizing: border-box;
 
     &::-webkit-scrollbar-track{
         -webkit-box-shadow: inset 0 0 6px $color-scrollshadow;
