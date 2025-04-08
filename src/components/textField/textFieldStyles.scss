@@ -1,3 +1,5 @@
+@import '../../styles/varibles.scss';
+
 .container {
     display: flex;
     box-sizing: border-box;
@@ -5,7 +7,7 @@
     gap: 4px;
     &__lbl{
         font-size: 14px;
-        color: #8f8f8f;
+        color: $color-lbl;
     }
     
     &__lbl_strong{
@@ -17,7 +19,7 @@
         padding: 0;
         outline: none;
         border: none;
-        border-bottom: 1px solid blue;
+        border-bottom: 1px solid $color-blue;
     }
     
     &__info{

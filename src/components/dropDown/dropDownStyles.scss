@@ -1,0 +1,22 @@
+.drop_down{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    &__lbl{
+        color: $color-lbl;
+        font-size: 14px;
+
+        &_strong{
+            font-weight: 600;
+        }
+    }
+
+    &__select{
+        font-size: 14px;
+        padding: 0;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid $color-blue;
+    }
+}

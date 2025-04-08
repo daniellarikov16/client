@@ -1,5 +1,6 @@
+import {LabelWeight} from '../../types/commonTypes';
+
 type InfoType = 'info' | 'error' | 'success';
-type LableWeight = 'normal' | 'strong';
 
 export interface TextFieldProps {
     lableText?: string;
@@ -8,5 +9,5 @@ export interface TextFieldProps {
     infoType?: InfoType;
     value?: string;
     onChange?: (value: string) => void;
-    lblWeight?: LableWeight
+    lblWeight?: LabelWeight
   }
