@@ -12,7 +12,7 @@ export const DepartmentsPage: FC = () => {
                         Список сотрудников
                     </div>
                 </div>
-                <div>
+                <div className="dep-page__content-container">
                     <div>
                         <span>ФИО</span>
                         <div>*</div>
