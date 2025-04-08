@@ -1,12 +1,6 @@
 import { FC } from 'react';
+import { IconProps } from '../../types/commonTypes'
 
-interface IconProps{
-    width?: number | string,
-    height?: number | string,
-    color?: string,
-    className?: string,
-    onClick?: () => void
-}
 export const LogoIcon: FC<IconProps> = props => {   
     const{
         className,

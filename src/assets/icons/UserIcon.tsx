@@ -1,12 +1,5 @@
 import { FC } from 'react';
-
-interface IconProps {
-    width?: number | string;
-    height?: number | string;
-    color?: string;
-    className?: string;
-    onClick?: () => void;
-}
+import { IconProps } from '../../types/commonTypes'
 
 export const UserIcon: FC<IconProps> = props => {
     const {

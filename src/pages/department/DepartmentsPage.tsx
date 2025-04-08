@@ -3,6 +3,8 @@ import { Layout } from "../../components/layots";
 import './departmentsPageStyles.scss'
 import { DropDown } from "../../components";
 import { EmployeesList } from "../../components";
+import { Button } from "../../components";
+
 
 export const DepartmentsPage: FC = () => {
     return(
@@ -20,12 +22,15 @@ export const DepartmentsPage: FC = () => {
                         selectedChanged = {(val) => console.log(val)}
                     />
                     <EmployeesList employeesList={[
-                        {id: 1, lastName: 'Иванов', firstName: 'Иван', middleName:  'Иванович'},
-                        {id: 2, lastName: 'Петров', firstName: 'Сергей', middleName:  'Дмитриевич'},
-                        {id: 3, lastName: 'Степанов', firstName: 'Степан' },
-                        {id: 4, lastName: 'Олегов', firstName: 'Олег', middleName:  'Олегович'},
-                        {id: 5, lastName: 'Сергеев', firstName: 'Сергей', middleName:  'Сергеевич'}
-                    ]} />
+                            {id: 1, lastName: 'Иванов', firstName: 'Иван', middleName:  'Иванович'},
+                            {id: 2, lastName: 'Петров', firstName: 'Сергей', middleName:  'Дмитриевич'},
+                            {id: 3, lastName: 'Степанов', firstName: 'Степан' },
+                            {id: 4, lastName: 'Олегов', firstName: 'Олег', middleName:  'Олегович'},
+                            {id: 5, lastName: 'Сергеев', firstName: 'Сергей', middleName:  'Сергеевич'}
+                        ]}
+                        onItemClick={(id) => console.log(id)}
+                    />
+                    <Button text = "Добавить сотрудника" className="dep-page__add-user-btn" />
                 </div>
                 <div>
                     <div>
