@@ -4,7 +4,7 @@ import { IconProps } from '../../types/commonTypes';
 export const TrashIcon: FC<IconProps> = props => {
     const {
         className,
-        color = '#ffffff',
+        color = '#313131',
         height = 28,
         width = 28,
         onClick
