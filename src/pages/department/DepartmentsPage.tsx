@@ -8,11 +8,9 @@ export const DepartmentsPage: FC = () => {
             <div className="dep-page">
                 <div className="dep-page__users-list-container">
                     <select></select>
-                    <div>
-                        Список сотрудников
-                    </div>
+                    <div>Список сотрудников</div>
                 </div>
-                <div className="dep-page__content-container">
+                <div className="dep-page__content-container">  {/* Добавлен класс */}
                     <div>
                         <span>ФИО</span>
                         <div>*</div>

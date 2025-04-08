@@ -9,10 +9,10 @@
     &__users-list-container{
         min-width: 500px;
         max-width: 500px;
-        border: 1px solid $color-dirtywhite;
+        border-radius: 1px solid $color-dirtywhite;
         box-shadow: 1px 0px 4px -3px $color-delimtershadow;
     }
-    
+
     &__content-container {  // Добавьте этот блок
         flex-grow: 1;  // Занимает всё оставшееся пространство
         display: flex;
