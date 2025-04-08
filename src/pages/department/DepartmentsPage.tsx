@@ -8,7 +8,7 @@ export const DepartmentsPage: FC = () => {
     return(
         <Layout>
             <div className="dep-page">
-                <div className="dep-page__users-list-container">
+                <div className="dep-page__users-list-containerr">
                     <DropDown items={[{
                             text: 'Отдел 1', value: '1'
                         },{
