@@ -1,0 +1,31 @@
+@import '../../styles/varibles.scss';
+
+.emp-list{
+    display:flex;
+    flex-direction: column;
+
+    &__item{
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 10px;
+        color: $color-baseblack;
+        font-size: 18px;
+        font-weight: 500;
+        border-bottom: 1px solid $color-dirtywhite;
+        box-shadow: 0px 1px 1px -1px $color-delimtershadow;
+
+        &_selected {
+            background-color: #bfc3f762;
+
+            &:hover{
+                background-color: #eaf3ff4d !important;
+            }
+        }
+
+        &:hover{
+            background-color: #f5f5f533;
+        }
+    }
+}
