@@ -26,9 +26,6 @@ export const DepartmentsPage: FC = () => {
                         {id: 4, lastName: 'Олегов', firstName: 'Олег', middleName:  'Олегович'},
                         {id: 5, lastName: 'Сергеев', firstName: 'Сергей', middleName:  'Сергеевич'}
                     ]} />
-                    <div>
-                        Список сотрудников
-                    </div>
                 </div>
                 <div>
                     <div>
