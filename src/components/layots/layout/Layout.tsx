@@ -25,9 +25,9 @@ export const Layout: FC<LayoutProps> = props => {
                 </div>
                 <div className="layout__user-menu">
                     <UserMenu items={[{
-                        id: 'go_to_profile',
+                        id: 'go_to_administrator',
                         action:() => {},
-                        label:'Перейти в профиль'
+                        label:'Администрирование'
                     }, {
                         id: 'exit',
                         action: () => {},
