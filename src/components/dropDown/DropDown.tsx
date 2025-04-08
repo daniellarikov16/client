@@ -12,9 +12,10 @@ export const DropDown: FC<DropDownProps> = props => {
     }
 
     return(
-        <div className="drop-down">
-            {!!label && (<label className={clsx("drop-down__lbl", {
-                'drop-down__lbl_strong': lblWeight === 'strong'
+        <div className="drop_down">
+            {!!label && (
+                <label className={clsx("drop_down__lbl", {
+                    'drop_down__lbl_strong': lblWeight==='strong'
             })}>
                 {label}
             </label>)}
