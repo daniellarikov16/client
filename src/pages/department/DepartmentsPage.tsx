@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Layout } from "../../components/layots";
 import './departmentsPageStyles.scss'
-import { DropDown } from "../../components";
+import { Dialog, DropDown } from "../../components";
 import { EmployeesList } from "../../components";
 import { Button } from "../../components";
 
@@ -33,6 +33,11 @@ export const DepartmentsPage: FC = () => {
                     <Button text = "Добавить сотрудника" className="dep-page__add-user-btn" />
                 </div>
                 <div>
+
+                <Dialog title = 'Test dialog'>
+                    <div>123123</div>
+                </Dialog>
+
                     <div>
                         <span>ФИО</span>
                         <div>*</div>

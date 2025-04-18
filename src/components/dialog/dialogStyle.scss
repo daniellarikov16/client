@@ -1,0 +1,18 @@
+@import '../../styles/varibles.scss';
+
+.dialog {
+    position: fixed;
+    inset: 0;
+    background: $color-underlay;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__paper{
+        min-width: 300px;
+        min-height: 150px;
+        background: $color-white;
+        border-radius: 4px;
+        box-shadow: $shadow;
+    }
+}
