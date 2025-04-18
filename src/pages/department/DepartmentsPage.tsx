@@ -20,10 +20,29 @@ export const DepartmentsPage: FC = () => {
     const[showEmployeeDialog, setShowEmployeeDialog] = useState (false);
     const [UserActionMode, setUserActionMode] = useState<'create' | 'edit'>('create');
     const [UserToEdit, setUserToEdit] = useState(0);
+    
+    const [lastName, setLastName] = useState ('');
+    const [firstName, setFirstName] = useState ('');
+    const [midleName, setMidleName] = useState ('');
 
     useEffect(() => {
         setEmployeesData(fakeEmployeesData);
     }, []);
+
+    useEffect (() => {
+        setLastName('');
+        setFirstName('');
+        setMidleName('');
+        if (UserActionMode === "edit") {
+            const employee = UserActionMode === 'edit'
+                ? employeesData.find(e => e.id === UserToEdit)
+                : undefined;
+            
+            setLastName(employee?.lastName ?? '');
+            setFirstName(employee?.firstName ?? '');
+            setMidleName(employee?.midleName ?? '');
+        }
+    },[employeesData, UserActionMode, UserToEdit]);
 
     const createEmployeeHandler = () => {
         setUserActionMode('create');
@@ -37,11 +56,14 @@ export const DepartmentsPage: FC = () => {
     }
     
     const userDialogContentRender = () => {
+        const employee = UserActionMode === 'edit'
+            ? employeesData.find(e => e.id === UserToEdit)
+            : undefined;
         return (
             <>
-                <TextField lableText="Фамилия" />
-                <TextField lableText="Имя" />
-                <TextField lableText="Отчество" />
+                <TextField lableText="Фамилия" value={employee?.lastName} onChange={(val) => setLastName(val)}/>
+                <TextField lableText="Имя" value={employee?.firstName} onChange={(val) => setFirstName(val)}/>
+                <TextField lableText="Отчество" value={employee?.midleName} onChange={(val) => setMidleName(val)}/>
             </>
         )
     }
