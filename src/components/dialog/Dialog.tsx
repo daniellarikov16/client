@@ -13,7 +13,7 @@ export const Dialog: FC<DialogProps> = props => {
                 <div>{children}</div>
                 <div>
                     <Button type="primary" text="Сохранить" />
-                    <Button text="Отмена" />
+                    <Button type='secondary'  text="Отмена" />
                 </div>
             </div>
         </div>
