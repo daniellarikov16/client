@@ -34,9 +34,9 @@ export const DepartmentsPage: FC = () => {
                 </div>
                 <div>
 
-                <Dialog title = 'Test dialog'>
-                    <div>123123</div>
-                </Dialog>
+                    <Dialog title = 'Test dialog'>
+                        <div>123123</div>
+                    </Dialog>
 
                     <div>
                         <span>ФИО</span>
