@@ -40,7 +40,7 @@ export const DepartmentsPage: FC = () => {
             
             setLastName(employee?.lastName ?? '');
             setFirstName(employee?.firstName ?? '');
-            setMidleName(employee?.midleName ?? '');
+            setMidleName(employee?.middleName ?? '');
         }
     },[employeesData, UserActionMode, UserToEdit]);
 
@@ -63,7 +63,7 @@ export const DepartmentsPage: FC = () => {
             <>
                 <TextField lableText="Фамилия" value={employee?.lastName} onChange={(val) => setLastName(val)}/>
                 <TextField lableText="Имя" value={employee?.firstName} onChange={(val) => setFirstName(val)}/>
-                <TextField lableText="Отчество" value={employee?.midleName} onChange={(val) => setMidleName(val)}/>
+                <TextField lableText="Отчество" value={employee?.middleName} onChange={(val) => setMidleName(val)}/>
             </>
         )
     }

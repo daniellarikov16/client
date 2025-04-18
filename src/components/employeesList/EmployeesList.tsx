@@ -36,7 +36,7 @@ export const EmployeesList: FC<EmployeesListProps> = props => {
                         className={clsx('empl-list__item', {'empl-list__item_selected': isSelected(user.id)})}
                         onClick={() => employeeClickHandler(user.id)}>
                         <div className='empl-list__item-fio'>
-                            <span>{`${user.lastName} ${user.firstName} ${user.midleName ?? ''}`.trim()}</span>
+                            <span>{`${user.lastName} ${user.firstName} ${user.middleName ?? ''}`.trim()}</span>
                         </div>
                         <div className='empl-list__item_actions'>
                             <PencilIcon width={18} height={18} onClick={() => {employeeEditHandler(user.id)}}/>
