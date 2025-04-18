@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Layout } from "../../components/layots";
 import './departmentsPageStyles.scss'
 import { Dialog, DropDown } from "../../components";
@@ -7,6 +7,15 @@ import { Button } from "../../components";
 
 
 export const DepartmentsPage: FC = () => {
+    const[showEmployeeDialog, setShowEmployeeDialog] = useState (false);
+    const [UserActionMode, setUserActionMode] = useState<'create' | 'edit'>('create');
+
+    const createEmployeeHandler = () => {
+        setUserActionMode('create');
+        setShowEmployeeDialog(true);
+    }
+
+
     return(
         <Layout>
             <div className="dep-page">
@@ -30,12 +39,15 @@ export const DepartmentsPage: FC = () => {
                         ]}
                         onItemClick={(id) => console.log(id)}
                     />
-                    <Button text = "Добавить сотрудника" className="dep-page__add-user-btn" />
+                    <Button text = "Добавить сотрудника" onClick={createEmployeeHandler}  className="dep-page__add-user-btn" />
                 </div>
                 <div>
 
-                    <Dialog title = 'Test dialog'>
-                        <div>123123</div>
+                    <Dialog title = {UserActionMode !== 'edit' ? 'Добавить сотрудника' : 'Изменить сотрудника'}
+                        open = {showEmployeeDialog}
+                        onSave = {() => {}}
+                        onCancel= {() => setShowEmployeeDialog(false)}
+                    >
                     </Dialog>
 
                     <div>
