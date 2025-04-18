@@ -9,7 +9,7 @@ export const Dialog: FC<DialogProps> = props => {
     return (
         <div className="dialog">
             <div className={clsx("dialog__paper", className)}>
-                <div>{title}</div>
+                <h4 className="dialog__header">{title}</h4>
                 <div>{children}</div>
                 <div>
                     <Button type="primary" text="Сохранить" />
