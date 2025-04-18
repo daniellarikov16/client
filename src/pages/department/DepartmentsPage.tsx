@@ -56,14 +56,11 @@ export const DepartmentsPage: FC = () => {
     }
     
     const userDialogContentRender = () => {
-        const employee = UserActionMode === 'edit'
-            ? employeesData.find(e => e.id === UserToEdit)
-            : undefined;
         return (
             <>
-                <TextField lableText="Фамилия" value={employee?.lastName} onChange={(val) => setLastName(val)}/>
-                <TextField lableText="Имя" value={employee?.firstName} onChange={(val) => setFirstName(val)}/>
-                <TextField lableText="Отчество" value={employee?.middleName} onChange={(val) => setMidleName(val)}/>
+                <TextField lableText="Фамилия" value={lastName} onChange={(val) => setLastName(val)}/>
+                <TextField lableText="Имя" value={firstName} onChange={(val) => setFirstName(val)}/>
+                <TextField lableText="Отчество" value={midleName} onChange={(val) => setMidleName(val)}/>
             </>
         )
     }
