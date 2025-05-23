@@ -9,10 +9,34 @@ import { DropDownItem } from "../../components/dropDown/DropDownProps";
 
 const fakeEmployeesData = [
     {id: 1, lastName: 'Иванов', firstName: 'Иван', middleName:  'Иванович', birthDate: new Date(). toISOString(), email: "ivan@mail.ru", phoneNumber: '8-800-888-88-88'},
-    {id: 2, lastName: 'Петров', firstName: 'Сергей', middleName:  'Дмитриевич',  birthDate: new Date(). toISOString(), email: "ivan@mail.ru", phoneNumber: '8-800-888-88-88'},
-    {id: 3, lastName: 'Степанов', firstName: 'Степан',  birthDate: new Date(). toISOString(), email: "ivan@mail.ru", phoneNumber: '8-800-888-88-88' },
-    {id: 4, lastName: 'Олегов', firstName: 'Олег', middleName:  'Олегович',  birthDate: new Date(). toISOString(), email: "ivan@mail.ru", phoneNumber: '8-800-888-88-88'},
-    {id: 5, lastName: 'Сергеев', firstName: 'Сергей', middleName:  'Сергеевич',  birthDate: new Date(). toISOString(), email: "ivan@mail.ru", phoneNumber: '8-800-888-88-88'}
+    {id: 2, lastName: 'Петров', firstName: 'Сергей', middleName:  'Дмитриевич',  birthDate: new Date(). toISOString(), email: "ivan@mail.ru", phoneNumber: '8-800-888-88-88',
+        educations: [{
+            id: 1,
+            description: "Системный администратор",
+            title: "ВГПТТ №36",
+        },{
+            id: 2,
+            description: "Информационные системы и технологии",
+            title: "ФГОУ ВГТУ",
+        },{
+            id: 3,
+            description: "Курсы повышения квалификации",
+            title: "Яндекс практикум",
+        }],
+        workExpirience: [{
+            id:1,
+            workedYears: 3,
+            description: "ООО ТЕХИНФОРМ сервис"
+        },{
+            id:2,
+            workedYears: 2,
+            description: "Data art"
+        },{
+            id:3,
+            workedYears: 4,
+            description: "Рексофт"
+        }]
+    }
 ] as Array<Employee>;
 
 const fakeDepartmentsData = [
@@ -33,6 +57,10 @@ export const DepartmentsPage: FC = () => {
     const [lastName, setLastName] = useState ('');
     const [firstName, setFirstName] = useState ('');
     const [midleName, setMidleName] = useState ('');
+
+    const [birthDate, setBirthDate] = useState ('');
+    const [email, setEmail] = useState ('');
+    const [phoneNumber, setphoneNumber] = useState ('');
 
     useEffect(() => {
         setEmployeesData(fakeEmployeesData);
@@ -63,6 +91,10 @@ export const DepartmentsPage: FC = () => {
             setLastName(employee?.lastName ?? '');
             setFirstName(employee?.firstName ?? '');
             setMidleName(employee?.middleName ?? '');
+
+            setBirthDate(employee?.birthDate ?? '');
+            setphoneNumber(employee?.phoneNumber ?? '');
+            setEmail(employee?.email ?? '');
         }
     },[employeesData, UserActionMode, UserToEdit]);
 
@@ -70,6 +102,9 @@ export const DepartmentsPage: FC = () => {
         setLastName ('');
         setFirstName('');
         setMidleName('');
+        setBirthDate('');
+        setEmail('');
+        setphoneNumber('');
     }
 
     const createEmployeeHandler = () => {
@@ -89,6 +124,10 @@ export const DepartmentsPage: FC = () => {
                 <TextField lableText="Фамилия" value={lastName} onChange={(val) => setLastName(val)}/>
                 <TextField lableText="Имя" value={firstName} onChange={(val) => setFirstName(val)}/>
                 <TextField lableText="Отчество" value={midleName} onChange={(val) => setMidleName(val)}/>
+
+                <TextField lableText="Дата рождения" value={birthDate} onChange={(val) => setBirthDate(val)}/>
+                <TextField lableText="Email" value={email} onChange={(val) => setEmail(val)}/>
+                <TextField lableText="Телефон" value={phoneNumber} onChange={(val) => setphoneNumber(val)}/>
             </>
         )
     }
