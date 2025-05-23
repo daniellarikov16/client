@@ -8,8 +8,8 @@ import { Employee, Department } from '../../types/models'
 import { DropDownItem } from "../../components/dropDown/DropDownProps";
 
 const fakeEmployeesData = [
-    {id: 1, lastName: 'Иванов', firstName: 'Иван', middleName:  'Иванович', birthDate: new Date(). toISOString(), email: "ivan@mail.ru", phoneNumber: '8-800-888-88-88'},
-    {id: 2, lastName: 'Петров', firstName: 'Сергей', middleName:  'Дмитриевич',  birthDate: new Date(). toISOString(), email: "ivan@mail.ru", phoneNumber: '8-800-888-88-88',
+    {id: 1, lastName: 'Иванов', firstName: 'Иван', middleName:  'Иванович', birthDate: new Date().toISOString(), email: "ivan@mail.ru", phoneNumber: '8-800-888-88-88'},
+    {id: 2, lastName: 'Петров', firstName: 'Сергей', middleName:  'Дмитриевич',  birthDate: new Date().toISOString(), email: "ivan@mail.ru", phoneNumber: '8-800-888-88-88',
         educations: [{
             id: 1,
             description: "Системный администратор",
@@ -49,7 +49,7 @@ export const DepartmentsPage: FC = () => {
     const [employeesData, setEmployeesData] = useState<Array<Employee>>([]);
     const [departmentsData, setDepartmentsData] = useState<Array<Department>>([]);
     const [selectedDepartmentId, setSelectedDepartmentId] = useState <number>();
-    const [selectedEmloyeeId, setSelectedEmployeeId] = useState<number>();
+    const [selectedEmloyee, setSelectedEmployee] = useState<Employee>();
     const [showEmployeeDialog, setShowEmployeeDialog] = useState (false);
     const [UserActionMode, setUserActionMode] = useState<'create' | 'edit'>('create');
     const [UserToEdit, setUserToEdit] = useState(0);
@@ -78,11 +78,10 @@ export const DepartmentsPage: FC = () => {
     useEffect(() => {
         const selectedDepartment = departmentsData.find(d => d.id === selectedDepartmentId); 
         setEmployeesData(selectedDepartment ? selectedDepartment.employees : []); 
-        setSelectedEmployeeId(undefined);  
+        setSelectedEmployee(undefined);  
     }, [departmentsData, selectedDepartmentId])
 
     useEffect (() => {
-        clearEmployeeDialogFields();
         if (UserActionMode === "edit") {
             const employee = UserActionMode === 'edit'
                 ? employeesData.find(e => e.id === UserToEdit)
@@ -99,6 +98,8 @@ export const DepartmentsPage: FC = () => {
     },[employeesData, UserActionMode, UserToEdit]);
 
     const clearEmployeeDialogFields = () =>{
+        setUserActionMode('create')
+        setUserToEdit(0)
         setLastName ('');
         setFirstName('');
         setMidleName('');
@@ -143,7 +144,19 @@ export const DepartmentsPage: FC = () => {
     }
 
     const onEmployeeSelectedHandler = (id: number) => {
-        setSelectedEmployeeId(id);
+        const employee = employeesData.find(e => e.id === id);
+        setSelectedEmployee(employee);
+    }
+
+    const getFIO = () => {
+        if (!selectedEmloyee){
+            return '';
+        }
+        return `${selectedEmloyee.lastName} ${selectedEmloyee.firstName} ${selectedEmloyee.middleName ?? ''}`.trim();
+    }
+
+    const uploadFileHandler = () => {
+        
     }
 
     return(
@@ -175,23 +188,40 @@ export const DepartmentsPage: FC = () => {
                     />
                     <Button text = "Добавить сотрудника" onClick={createEmployeeHandler}  className="dep-page__add-user-btn" />
                 </div>
-                <div>
-
-                    <Dialog title = {UserActionMode !== 'edit' ? 'Добавить сотрудника' : 'Изменить сотрудника'}
-                        open = {showEmployeeDialog}
-                        onSave = {() => {}}
-                        onCancel= {closeEmployeeDialogHandler}
-                    >
-                        {userDialogContentRender()}
-                    </Dialog>
-
-                    <div>
-                        <span>ФИО</span>
-                        <div>*</div>
+                <div className="dep-page__user-info-container">
+                    <div className="dep-page__user-info-header">
+                        <div className="dep-page__user-info-user">
+                            <div className="dep-page__user-info-fullname">
+                                {getFIO()}
+                            </div>
+                            <div className="dep-page__user-info-pers-data">
+                                <div>
+                                    <strong>Дата рождения:</strong>
+                                    <span>{selectedEmloyee?.birthDate ?? '-'}</span>
+                                </div>
+                                <div>
+                                    <strong>Email:</strong>
+                                    <span>{selectedEmloyee?.email ?? '-'}</span>
+                                </div>
+                                <div>
+                                    <strong>Телефон:</strong>
+                                    <span>{selectedEmloyee?.phoneNumber ?? '-'}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="dep-page__user-info-actions">
+                            <Button text = "Загрузить файл" onClick={uploadFileHandler} />
+                        </div>
                     </div>
                     <div>
-                        <div>Личный данные</div>
-                        <div>Данные о работе</div>
+                        <div>
+                            Fiels List
+                        </div>
+                        <div>
+                            <div>Education list</div>
+                            <div>Данные о работе</div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

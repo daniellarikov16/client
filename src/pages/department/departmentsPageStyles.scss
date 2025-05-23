@@ -21,4 +21,48 @@
         margin-top:auto;
         margin-bottom: 10px;
     }
+
+    &__user-info-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__user_info_header{
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        border-bottom: 1px solid $color-dirtywhite;
+        box-shadow: 0px 0px 3px -3px $color-delimtershadow;
+        padding-bottom: 10px;
+    }
+
+    &__user-info-user{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+
+    &__user-info-actions {
+        min-height: 32px;
+        min-width: 32px;
+
+        & svg{
+            cursor: pointer;
+            opacity: 0.8;
+        }
+    }
+
+
+    &__user-info-fullname{
+        font-size: 20px;
+        color: $color-darkgrey
+    }
+
+    &__user-info-pers-data{
+        display: flex;
+        gap: 30px;
+    }
 }
