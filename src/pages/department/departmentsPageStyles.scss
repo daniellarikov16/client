@@ -45,17 +45,14 @@
         width: 100%;
     }
 
-    //Дорабаьтывал сам
     &__user-info-actions {
-        display: flex;          // Включаем flex-раскладку
-        flex-wrap: wrap;        // Позволяет переносить элементы на новую строку
-        align-items: center;    // Выравниваем по вертикали
-        gap: 8px 16px;
+        min-height: 32px;
+        min-width: 32px;
 
         & svg{
             cursor: pointer;
             opacity: 0.8;
-            margin-left: auto;
+
         }
     }
 
