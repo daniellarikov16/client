@@ -47,17 +47,15 @@
 
     //Дорабаьтывал сам
     &__user-info-actions {
-        display: flex;           
-        justify-content: flex-end; 
-        align-items: center;     
-        min-height: 32px;
-        min-width: 32px;
-        margin-left: auto; 
+        display: flex;          // Включаем flex-раскладку
+        flex-wrap: wrap;        // Позволяет переносить элементы на новую строку
+        align-items: center;    // Выравниваем по вертикали
+        gap: 8px 16px;
 
         & svg{
             cursor: pointer;
-            margin-left: 8px; 
             opacity: 0.8;
+            margin-left: auto;
         }
     }
 
