@@ -45,14 +45,19 @@
         width: 100%;
     }
 
+    //Дорабаьтывал сам
     &__user-info-actions {
+        display: flex;           
+        justify-content: flex-end; 
+        align-items: center;     
         min-height: 32px;
         min-width: 32px;
+        margin-left: auto; 
 
         & svg{
             cursor: pointer;
+            margin-left: 8px; 
             opacity: 0.8;
-            order: -1;
         }
     }
 
