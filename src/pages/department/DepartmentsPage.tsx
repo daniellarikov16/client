@@ -6,6 +6,7 @@ import { EmployeesList } from "../../components";
 import { Button } from "../../components";
 import { Employee, Department } from '../../types/models'
 import { DropDownItem } from "../../components/dropDown/DropDownProps";
+import { UploadIcon } from "../../assets/icons";
 
 const fakeEmployeesData = [
     {id: 1, lastName: 'Иванов', firstName: 'Иван', middleName:  'Иванович', birthDate: new Date().toISOString(), email: "ivan@mail.ru", phoneNumber: '8-800-888-88-88'},
@@ -210,7 +211,7 @@ export const DepartmentsPage: FC = () => {
                             </div>
                         </div>
                         <div className="dep-page__user-info-actions">
-                            <Button text = "Загрузить файл" onClick={uploadFileHandler} />
+                            <UploadIcon onClick={uploadFileHandler}/>
                         </div>
                     </div>
                     <div>
